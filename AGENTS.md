@@ -3,15 +3,19 @@
 ## Product direction
 Build an original Flutter application and production workflow for personalized children's picture books. The initial editorial project is **Uma Noite Mágica com Papai Noel**, with courage as its emotional theme and "cartoon mágico" as its visual direction.
 
-## Mandatory project skills
-Before book-production work, read relevant files under skills/:
-- book-production-orchestrator for end-to-end workflow and dependencies.
-- reference-material-analysis for websites, sample books, screenshots, page images and PDFs.
-- character-photo-adaptation for user-provided photographs.
-- children-picturebook-writing and storyboard-30-pages for manuscript and page plan.
-- magical-cartoon-art-direction and picturebook-illustration-production for visual consistency.
-- narration-and-audio-script for spoken text and audio notes.
-- picturebook-layout, child-safety-and-editorial-review and book-export-preflight before delivery.
+## Skills
+Codex-discoverable skills are under .agents/skills/. The portable catalogue is mirrored under skills/. Before book-production work, read:
+- book-production-orchestrator
+- reference-material-analysis
+- character-photo-adaptation
+- children-picturebook-writing
+- storyboard-30-pages
+- magical-cartoon-art-direction
+- picturebook-illustration-production
+- narration-and-audio-script
+- picturebook-layout
+- child-safety-and-editorial-review
+- book-export-preflight
 
 ## Non-negotiable constraints
 - Use Flutter/Dart as the cross-platform application stack (Web + Android).
@@ -34,4 +38,4 @@ For Flutter work, run:
 4. flutter build web --release --wasm --base-href /kids/
 5. flutter build apk --debug
 
-For book-production work, run the checklist in skills/book-export-preflight/SKILL.md, prove the narrative-page count from the manifest, and inspect every page in sequence. State clearly if a visual page-by-page review has not been completed.
+For book-production work, run the checklist in .agents/skills/book-export-preflight/SKILL.md, prove the narrative-page count from the manifest, and inspect every page in sequence. State clearly if a visual page-by-page review has not been completed.
