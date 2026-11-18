@@ -1,4 +1,4 @@
-""""Ensure the generated Flutter Android app meets image_picker's SDK floor."""
+"""Ensure the generated Flutter Android app meets image_picker's SDK floor."""
 from pathlib import Path
 import re
 
@@ -24,4 +24,3 @@ else:
         print(f"Android minSdk already meets requirement in {path}.")
     else:
         raise SystemExit(f"Could not safely identify the minSdk setting in {path}; inspect it manually.")
-"

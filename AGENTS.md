@@ -1,23 +1,37 @@
-# AGENTS.md — Pequenos Protagonistas
+# AGENTS.md — kids
 
-## Objetivo
-Construir um aplicativo Flutter multiplataforma (Web + Android) para personalização de livros infantis, usando o site público `https://kidoo.kids/` apenas como referência funcional e de fluxo.
+## Product direction
+Build an original Flutter application and production workflow for personalized children's picture books. The initial editorial project is **Uma Noite Mágica com Papai Noel**, with courage as its emotional theme and "cartoon mágico" as its visual direction.
 
-## Regras de implementação
-- Use Flutter/Dart como stack principal; mantenha a lógica compartilhada entre Web e Android.
-- Prefira APIs do Flutter SDK e dependências Dart/Flutter pequenas e multiplataforma.
-- Verifique compatibilidade Web (incluindo o backend WebAssembly aplicável ao Flutter SDK em uso) e Android (SDK mínimo exigido pelas dependências, permissões e ciclo de vida).
-- Não introduza código, marca, imagens, textos de marketing, testemunhos, bases de dados, APIs privadas ou credenciais do site de referência.
-- Mantenha claro o que é comportamento observado, inferência ou decisão de design.
-- Não implemente pagamento, autenticação, upload remoto ou geração real de livros sem especificação e autorização próprias.
-- Fotos de crianças são dados pessoais sensíveis no contexto do produto: não persistir nem transmitir imagens nesta versão demonstrativa; explicar qualquer mudança de tratamento de dados antes de implementá-la.
-- Faça mudanças incrementais e inclua testes para validações do formulário, seleção de tema e visualização.
+## Mandatory project skills
+Before book-production work, read relevant files under skills/:
+- book-production-orchestrator for end-to-end workflow and dependencies.
+- reference-material-analysis for websites, sample books, screenshots, page images and PDFs.
+- character-photo-adaptation for user-provided photographs.
+- children-picturebook-writing and storyboard-30-pages for manuscript and page plan.
+- magical-cartoon-art-direction and picturebook-illustration-production for visual consistency.
+- narration-and-audio-script for spoken text and audio notes.
+- picturebook-layout, child-safety-and-editorial-review and book-export-preflight before delivery.
 
-## Verificação esperada
-1. `dart format .`
-2. `flutter analyze`
-3. `flutter test`
-4. `flutter build web`
-5. `flutter build apk --debug`
+## Non-negotiable constraints
+- Use Flutter/Dart as the cross-platform application stack (Web + Android).
+- Use supplied photos only to create the user-requested stylized fictional book characters; never infer or claim the depicted person's identity.
+- Never commit real character photographs, face crops, private prompts containing personal details, or generated private book pages to this public repository unless the user separately and explicitly authorizes that exact publication.
+- Do not save supplied photos as persistent reference images unless the user explicitly requests that separate action and supplies/confirms the reference name.
+- Do not reuse the reference publisher's text, characters, book illustrations, logos, testimonials or proprietary assets.
+- Courage means recognizing feelings, asking for help and taking safe, thoughtful actions; never equate courage with hiding fear, obeying strangers or taking dangerous risks.
+- Use at least 30 numbered narrative pages. Cover, title, dedication, credits and back cover are additional pages and do not count toward the 30 narrative pages.
+- Keep each page's prose, illustration brief, composition, narration and continuity notes together in the storyboard.
+- Do not claim that a story treats anxiety, guarantees empathy or produces a developmental outcome.
+- Label evidence as OBSERVED, INFERRED, UNKNOWN or PRODUCT DECISION.
+- Do not implement remote storage, photo upload, AI generation backend, payments, account systems or messaging integrations without separate specifications and approval.
 
-Registre falhas de ambiente separadamente de falhas do código. Não declare testes executados quando não houver SDK/dispositivo disponível.
+## Verification
+For Flutter work, run:
+1. dart format --output=none --set-exit-if-changed .
+2. flutter analyze
+3. flutter test
+4. flutter build web --release --wasm --base-href /kids/
+5. flutter build apk --debug
+
+For book-production work, run the checklist in skills/book-export-preflight/SKILL.md, prove the narrative-page count from the manifest, and inspect every page in sequence. State clearly if a visual page-by-page review has not been completed.

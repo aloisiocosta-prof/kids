@@ -1,82 +1,63 @@
-# Pequenos Protagonistas — Flutter Web + Android
+# Kids — Flutter + habilidades de produção de livros infantis
 
-Aplicativo demonstrativo independente para criar uma prévia de um livro infantil personalizado. A referência de pesquisa é o fluxo público do site Kidoo; este projeto não é afiliado à Kidoo e não reutiliza sua marca, textos promocionais, depoimentos ou ilustrações.
+Aplicativo demonstrativo independente em Flutter para personalização de livros infantis, acompanhado por habilidades versionadas para analisar referências, adaptar personagens a partir de fotografias fornecidas pela família e produzir um livro ilustrado original.
 
-## O que já está implementado
+## Projeto editorial inicial
 
-- Landing page responsiva com identidade visual própria.
-- Jornada em três etapas: protagonista, universo da aventura e revisão.
-- Nome, idade, descrição visual, personagens adicionais e dedicatória.
-- Seleção opcional de foto local por `image_picker`.
-- Seleção de tema, estilo e mensagem principal.
-- Prévia demonstrativa local da capa e de trechos de história.
-- Teste inicial de widget.
+**Uma Noite Mágica com Papai Noel**  
+**Tema emocional:** coragem.  
+**Direção visual:** cartoon mágico.  
+**Extensão:** no mínimo 30 páginas narrativas; capa, folha de rosto, dedicatória, créditos e contracapa são adicionais.
 
-## Limites importantes da versão 0.1
+A história deverá mostrar coragem como reconhecer o medo, pedir ajuda e agir com segurança — não como ausência de medo ou exposição a perigo.
 
-- A prévia é determinística e local; não há geração por IA nem PDF final.
-- Não há autenticação, checkout, provedor de pagamento, backend, banco de dados, upload remoto, WhatsApp ou e-mail.
-- A foto não é transmitida: fica apenas em memória enquanto a tela estiver aberta.
-- Não foram acessadas áreas autenticadas ou endpoints privados do site de referência.
+## O que a referência pública permite afirmar
 
-## Requisitos
+A página pública de O Natal Gentil de Duda informa estilo "Cartoon mágico", 30 páginas com narração, protagonista de cinco anos, avó, cachorrinha e uma noite de Natal com Papai Noel. O leitor público expõe um contador "1 de 18", diferença que permanece sem explicação. As capturas enviadas mostram a seleção de faixas etárias e uma etapa de cadastro do protagonista. Consulte docs/reference-analysis/kidoo-reference.md.
 
-- Flutter 3.50.0 (stable) / Dart 3.14.0 ou versão compatível posterior.
-- Android SDK configurado para build Android.
+A leitura textual do site e as capturas não dão acesso às 18 imagens internas do exemplo. Os seus textos e cenas não foram transcritos; o projeto não os copia.
 
-## Preparar e executar
+## Skills
 
-```bash
-flutter create --platforms=web,android --project-name=pequenos_protagonistas .
-python scripts/set_android_min_sdk.py
-flutter pub get
-dart format .
-flutter analyze
-flutter test
-flutter run -d chrome --wasm
-flutter build web --wasm
-flutter build apk --debug
-```
+| Skill | Uso |
+|---|---|
+| book-production-orchestrator | Ordenar todo o processo e os entregáveis |
+| reference-material-analysis | Ler capturas, imagens, livros e fluxos de referência |
+| character-photo-adaptation | Converter fotos fornecidas em personagens ilustrados consistentes |
+| children-picturebook-writing | Escrever texto infantil original e adequado à idade |
+| storyboard-30-pages | Planejar pelo menos 30 páginas narrativas individualizadas |
+| magical-cartoon-art-direction | Definir estilo, paleta, personagens, cenários e prompts |
+| picturebook-illustration-production | Produzir e revisar ilustrações página a página |
+| narration-and-audio-script | Preparar texto para narração e direção de voz |
+| picturebook-layout | Diagramar texto e imagem para livro digital/impresso |
+| child-safety-and-editorial-review | Revisar privacidade, representação e conteúdo emocional |
+| book-export-preflight | Verificar arquivos finais e contagem de páginas |
 
-## Publicação no GitHub Pages
+## Fluxo de criação
 
-A aplicação será publicada em <https://aloisiocosta-prof.github.io/kids/> por GitHub Actions. Antes do primeiro deploy, configure **Settings → Pages → Build and deployment → Source → GitHub Actions**.
+1. Receber imagens e instruções do fluxo de referência e catalogar cada evidência.
+2. Confirmar faixa etária, nome curto do protagonista, gênero/forma de representação, personalidade, interesses e papel de cada pessoa fotografada.
+3. Criar ficha visual de cada personagem a partir das fotos e aprovar os modelos antes de gerar cenas.
+4. Escrever a narrativa, revisá-la e aprovar o texto antes das ilustrações.
+5. Gerar storyboard de 30+ páginas; cada página tem texto, ilustração, composição, narração e continuidade.
+6. Gerar ilustrações com o mesmo guia de personagens e estilo.
+7. Diagramar, revisar todas as páginas e exportar.
+8. Confirmar a contagem, legibilidade, continuidade, direitos de uso e qualidade dos arquivos.
 
-O workflow `.github/workflows/flutter-ci.yml` valida formatação, análise estática, testes e build Android; nas publicações de `main`, também compila WebAssembly e publica `build/web` com `--base-href /kids/`. Pull requests validam o código, mas não fazem deploy. Consulte [`docs/github-pages-deployment.md`](docs/github-pages-deployment.md) para detalhes e limitações de cabeçalhos HTTP do Wasm no GitHub Pages.
+## Fotos e privacidade
 
-## Instalar REA no ambiente local do Codex
+As fotos fornecidas são materiais privados de trabalho. Não as adicione a este repositório público nem a artefatos públicos de CI. Antes do envio, confirme que você tem autorização para usar cada imagem e que as pessoas/responsáveis compreendem a finalidade. As imagens devem ser usadas apenas para a adaptação visual solicitada; não fazemos reconhecimento de identidade.
 
-O projeto inclui instaladores em `scripts/`:
+## Aplicação
 
-**Windows PowerShell**
+O site pretendido é https://aloisiocosta-prof.github.io/kids/ e o workflow encontra-se em .github/workflows/flutter-ci.yml. A primeira publicação depende da validação do workflow e da configuração de Pages com fonte GitHub Actions.
 
-```powershell
-Set-ExecutionPolicy -Scope Process Bypass
-.\scripts\install-rea.ps1
-```
+## Base de evidências e bibliografia
 
-**macOS/Linux**
-
-```bash
-./scripts/install-rea.sh
-```
-
-Os scripts chamam `rea-agents` para configurar o cliente Codex; eles exigem Node.js 22.23.4+, 24.22.1+ ou 26.12.1+ e exibem o plano interativo para revisão. Ao final, reinicie o Codex.
-
-## Estrutura
-
-```text
-.
-├── .agents/skills/reference-site-reconstruction/SKILL.md
-├── docs/reverse-engineering-notes.md
-├── docs/github-pages-deployment.md
-├── lib/main.dart
-├── scripts/
-├── test/widget_test.dart
-├── AGENTS.md
-└── pubspec.yaml
-```
+- Metadados e limites da referência: docs/reference-analysis/kidoo-reference.md.
+- Base de pesquisa: docs/book-production/research-and-design-basis.md.
+- Brief editorial e plano de 30 páginas: docs/book-production/editorial-brief.md e docs/book-production/30-page-structure.md.
 
 ## Licença
 
-MIT para os arquivos originais deste projeto. O REA é um projeto externo; a licença e os termos aplicáveis são os publicados no repositório oficial.
+Os arquivos originais deste repositório são disponibilizados sob MIT. Essa licença não concede direitos sobre as marcas, imagens ou textos do site de referência.
