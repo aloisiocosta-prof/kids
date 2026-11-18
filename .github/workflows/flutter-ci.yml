@@ -41,6 +41,9 @@ jobs:
       - name: Resolve dependencies
         run: flutter pub get
 
+      - name: Apply Dart analyzer fixes
+        run: dart fix --apply
+
       - name: Format Dart sources
         run: dart format .
 
