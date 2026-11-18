@@ -177,7 +177,7 @@ class LandingPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: const Column(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.auto_awesome, size: 38, color: Colors.white),
@@ -226,10 +226,10 @@ class LandingPage extends StatelessWidget {
         width: double.infinity,
         color: const Color(0xFFF6F3FF),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 65),
-        child: const Center(
+        child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1080),
-            child: const Column(
+            child: Column(
               children: [
                 const Text(
                   'Uma história em três passos',
@@ -273,10 +273,10 @@ class LandingPage extends StatelessWidget {
 
   Widget _themes() => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 68),
-        child: const Center(
+        child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1080),
-            child: const Column(
+            child: Column(
               children: [
                 const Text(
                   'Todo mundo tem um mundo favorito',
