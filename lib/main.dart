@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() => runApp(const PequenosProtagonistasApp());
@@ -226,10 +226,10 @@ class LandingPage extends StatelessWidget {
         width: double.infinity,
         color: const Color(0xFFF6F3FF),
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 65),
-        child: Center(
+        child: const Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1080),
-            child: Column(
+            child: const Column(
               children: [
                 const Text(
                   'Uma história em três passos',
