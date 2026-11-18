@@ -273,10 +273,10 @@ class LandingPage extends StatelessWidget {
 
   Widget _themes() => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 68),
-        child: Center(
+        child: const Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1080),
-            child: Column(
+            child: const Column(
               children: [
                 const Text(
                   'Todo mundo tem um mundo favorito',
